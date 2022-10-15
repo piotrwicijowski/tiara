@@ -26,4 +26,10 @@ export const housesInitial: HouseCapacity[] = [
     }
 ]
 
-export const housesStore = writable(housesInitial);
+let housesArray = JSON.parse(localStorage.getItem('houses')) || housesInitial;
+
+export const housesStore = writable(housesArray);
+
+housesStore.subscribe((value) =>
+    localStorage.setItem('houses', JSON.stringify(value))
+);

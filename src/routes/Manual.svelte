@@ -15,7 +15,7 @@
 <style>
     .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
         gap: 1em;
     }
 </style>
