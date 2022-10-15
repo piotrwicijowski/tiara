@@ -1,6 +1,5 @@
 <script>
     import { onMount } from "svelte";
-    import { Link } from "svelte-routing";
     import SelectedHouse from "../components/SelectedHouse.svelte";
     import { housesStore } from "../services/stores";
     import { houses } from "../utils/houses";

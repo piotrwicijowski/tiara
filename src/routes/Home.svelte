@@ -1,9 +1,18 @@
 <script>
     import { navigate } from "svelte-routing";
-    import { randomize } from "../services/randomizer";
+    import { randomizeHouses } from "../services/randomizer";
+    import { housesStore } from "../services/stores";
+
+    // let houses;
+
+	// const unsubscribe = housesStore.subscribe(value => {
+	// 	houses = value;
+	// });
+
+	// onDestroy(unsubscribe);
 
     function select() {
-        const selectedHouse = randomize();
+        const selectedHouse = randomizeHouses($housesStore);
         navigate(`/selected/${selectedHouse}`);
     }
 </script>

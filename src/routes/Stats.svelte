@@ -2,7 +2,8 @@
     import HouseStats from "../components/HouseStats.svelte";
     import { housesInitial, housesStore } from "../services/stores";
     function reset() {
-        housesStore.set(housesInitial);
+        housesStore.set(JSON.parse(JSON.stringify(housesInitial)));
+        console.log('oje')
     }
 </script>
 
