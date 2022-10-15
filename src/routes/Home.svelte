@@ -3,19 +3,28 @@
     import { randomizeHouses } from "../services/randomizer";
     import { housesStore } from "../services/stores";
 
-    // let houses;
-
-	// const unsubscribe = housesStore.subscribe(value => {
-	// 	houses = value;
-	// });
-
-	// onDestroy(unsubscribe);
-
     function select() {
         const selectedHouse = randomizeHouses($housesStore);
         navigate(`/selected/${selectedHouse}`);
     }
 </script>
 
-<p>Witamy w Tiarze przydziału</p>
-<button on:click={select}>Losuj</button>
+<div class="wrapper">
+
+<h3>Witamy w Tiarze przydziału</h3>
+<button class="select" on:click={select}>Losuj</button>
+</div>
+
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .select {
+        aspect-ratio: 1;
+        width: 400px;
+        max-width: 100%;
+        font-size: 3rem;
+    }
+</style>

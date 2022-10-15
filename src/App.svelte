@@ -22,5 +22,7 @@
 <style>
     .main {
         padding: 2em;
+        display: flex;
+        justify-content: center;
     }
 </style>
