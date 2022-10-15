@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import SelectedHouse from "../components/SelectedHouse.svelte";
     import { housesStore } from "../services/stores";
     import { houses } from "../utils/houses";
 
@@ -20,6 +21,6 @@
     });
 </script>
 
-{selectedHouse.name}
+<SelectedHouse house={selectedHouse}></SelectedHouse>
 
 <audio src={audioSource} bind:this={audio} />

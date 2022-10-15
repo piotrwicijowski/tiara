@@ -13,6 +13,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --ravenclaw-blue: #1d476f;
+  --hufflepuff-yellow: #e9b625;
+  --slytherin-green: #173825;
+  --gryffindor-red: #6a2528;
 }
 
 a {
