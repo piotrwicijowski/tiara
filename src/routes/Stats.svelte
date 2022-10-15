@@ -1,19 +1,10 @@
-<div>
-    <span>Gryffindor</span>
-    <span>0</span>
-</div>
+<script>
+    import { housesStore } from "../services/stores";
+</script>
 
-<div>
-    <span>Slytherin</span>
-    <span>0</span>
-</div>
-
-<div>
-    <span>Ravenclaw</span>
-    <span>0</span>
-</div>
-
-<div>
-    <span>Hufflepuff</span>
-    <span>0</span>
-</div>
+{#each $housesStore as house}
+    <div>
+        <span>{house.house.name}</span>
+        <span>{house.count}</span>
+    </div>
+{/each}

@@ -1,5 +1,5 @@
 export function randomize(): number {
-    const capacities = [50, 50, 50, 50];
+    const capacities = [2, 2, 2, 2];
     const taken = [0, 0, 0, 0];
     const free = capacities.map((cap, i) => cap - taken[i]);
     const freeIntervals = free.reduce((acc, x) => {
@@ -19,7 +19,7 @@ export function randomize(): number {
 }
 
 function randomRange(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min)) + 1 + min;
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 type Bracket = {

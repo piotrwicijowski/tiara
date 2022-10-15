@@ -3,6 +3,12 @@ export type House = {
     name: string,
 }
 
+export type HouseCapacity = {
+    house: House,
+    count: number,
+    capacity: number,
+}
+
 export const houses: House[] = [
     {id: 0, name: 'Gryffindor'},
     {id: 1, name: 'Slytherin'},
