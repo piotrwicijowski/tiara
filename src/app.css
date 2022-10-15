@@ -14,10 +14,11 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --ravenclaw-blue: #1d476f;
-  --hufflepuff-yellow: #e9b625;
-  --slytherin-green: #173825;
-  --gryffindor-red: #6a2528;
+  --ravenclaw-color: #1d476f;
+  /* --hufflepuff-color: #e9b625; */
+  --hufflepuff-color: #7c6115;
+  --slytherin-color: #173825;
+  --gryffindor-color: #6a2528;
   --background-color: #242424;
 }
 

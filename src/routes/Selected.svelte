@@ -20,10 +20,25 @@
         }
         return houses;
     });
+
+    function goBack() {
+        history.back();
+    }
 </script>
 
-<Link to="/">
+<button on:click={goBack}>
     <SelectedHouse house={selectedHouse}></SelectedHouse>
-</Link>
+</button>
 
 <audio src={audioSource} bind:this={audio} />
+
+<style>
+    button {
+        background: none;
+        padding: 0;
+        border-radius: 0;
+    }
+    button:hover {
+        border-color: transparent;
+    }
+</style>
