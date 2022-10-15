@@ -1,5 +1,6 @@
 <script>
     import { Router, Link, Route } from "svelte-routing";
+    import Navigation from "./components/Navigation.svelte";
     import Home from "./routes/Home.svelte";
     import Manual from "./routes/Manual.svelte";
     import Selected from "./routes/Selected.svelte";
@@ -9,15 +10,17 @@
 </script>
 
 <Router {url}>
-    <nav>
-        <Link to="/">Losuj</Link>
-        <Link to="manual">Wybierz</Link>
-        <Link to="stats">Statystyki</Link>
-    </nav>
-    <div>
+    <Navigation></Navigation>
+    <div class="main">
         <Route path="stats" component={Stats} />
         <Route path="selected/:id" component={Selected} />
         <Route path="manual" component={Manual} />
         <Route path="/"><Home /></Route>
     </div>
 </Router>
+
+<style>
+    .main {
+        padding: 2em;
+    }
+</style>

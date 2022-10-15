@@ -1,19 +1,21 @@
 <script>
     import { Link } from "svelte-routing";
+    import SelectedHouse from "../components/SelectedHouse.svelte";
+    import { houses } from "../utils/houses";
 </script>
 
-<Link to="/selected/0">
-    <span>Gryffindor</span>
-</Link>
+<div class="grid">
+    {#each houses as house}
+        <Link to={ `/selected/${house.id}` }>
+            <SelectedHouse house={house}></SelectedHouse>
+        </Link>
+    {/each}
+</div>
 
-<Link to="/selected/1">
-    <span>Slytherin</span>
-</Link>
-
-<Link to="/selected/2">
-    <span>Ravenclaw</span>
-</Link>
-
-<Link to="/selected/3">
-    <span>Hufflepuff</span>
-</Link>
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        gap: 1em;
+    }
+</style>
