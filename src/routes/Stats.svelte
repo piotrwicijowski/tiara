@@ -3,8 +3,9 @@
     import { housesInitial, housesStore } from "../services/stores";
     let editable = false;
     function reset() {
-        housesStore.set(JSON.parse(JSON.stringify(housesInitial)));
-        console.log("oje");
+        if (confirm("Czy na pewno zresetować statystyki?")) {
+            housesStore.set(JSON.parse(JSON.stringify(housesInitial)));
+        }
     }
     function edit() {
         editable = true;
@@ -21,18 +22,27 @@
         {:else}
             <button on:click={edit}>edytuj</button>
         {/if}
-        <button on:click={reset}>resetuj</button>
+        <button class="reset" on:click={reset}>resetuj</button>
     </div>
-    {#each $housesStore as house}
-        <HouseStats {house} {editable} />
-    {/each}
+    <div>
+        {#each $housesStore as house}
+            <HouseStats {house} {editable} />
+        {/each}
+    </div>
 </div>
 
 <style>
     .wrapper {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
     }
     .actions {
         display: flex;
+        gap: 0.5em;
+    }
+    .reset {
+        margin-left: auto;
     }
 </style>
