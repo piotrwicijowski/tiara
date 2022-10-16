@@ -1,6 +1,6 @@
 <script>
     import HouseStats from "../components/HouseStats.svelte";
-    import { housesInitial, housesStore } from "../services/stores";
+    import { housesInitial, housesStore, useCustomAudio } from "../services/stores";
     let editable = false;
     function reset() {
         if (confirm("Czy na pewno zresetować statystyki?")) {
@@ -22,6 +22,8 @@
         {:else}
             <button on:click={edit}>edytuj</button>
         {/if}
+        <input id="custom-audio" type="checkbox" bind:checked={$useCustomAudio}/>
+        <label for="custom-audio">alternatywne audio</label>
         <button class="reset" on:click={reset}>resetuj</button>
     </div>
     <div>
@@ -41,6 +43,7 @@
     .actions {
         display: flex;
         gap: 0.5em;
+        align-items: center;
     }
     .reset {
         margin-left: auto;

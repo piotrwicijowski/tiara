@@ -1,12 +1,13 @@
 <script>
     import { onMount } from "svelte";
     import SelectedHouse from "../components/SelectedHouse.svelte";
-    import { housesStore } from "../services/stores";
+    import { housesStore, useCustomAudio } from "../services/stores";
     import { houses } from "../utils/houses";
 
     export let id;
     const selectedHouse = houses.find((house) => house.id == id);
-    const audioSource = `/audio_houses_${selectedHouse.name.toLowerCase()}.wav`;
+
+    const audioSource = `/audio_houses_${selectedHouse.name.toLowerCase()}${$useCustomAudio ? '2' : ''}.wav`;
     let audio;
     onMount(async () => {
         audio?.play();

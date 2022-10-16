@@ -33,3 +33,15 @@ export const housesStore = writable(housesArray);
 housesStore.subscribe((value) =>
     localStorage.setItem('houses', JSON.stringify(value))
 );
+
+let customAudioLocalStorage = JSON.parse(localStorage.getItem('customAudio'));
+
+if(customAudioLocalStorage == null){
+    customAudioLocalStorage = true;
+}
+
+export const useCustomAudio = writable(customAudioLocalStorage);
+
+useCustomAudio.subscribe((value) =>
+    localStorage.setItem('customAudio', JSON.stringify(value))
+);
